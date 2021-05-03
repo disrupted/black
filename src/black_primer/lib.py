@@ -117,7 +117,7 @@ async def black_run(
     """Run Black and record failures"""
     cmd = [str(which(BLACK_BINARY))]
     if "cli_arguments" in project_config and project_config["cli_arguments"]:
-        cmd.extend(*project_config["cli_arguments"])
+        cmd.extend(project_config["cli_arguments"])
     cmd.extend(["--check", "--diff", "."])
 
     with TemporaryDirectory() as tmp_path:
